@@ -7,6 +7,19 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
+  Product.findAll({
+    include: [
+      { model: Category },
+      { model: Tag }
+    ]
+  })
+  .then((products) => {
+    res.json(products);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 // get one product
@@ -91,6 +104,21 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
+  Product.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then((deletedProductCount) => {
+    if (!deletedProductCount) {
+      return res.status(404).json({message: "Product not found" });
+    }
+    res.json({message: `Product deleted` });
+  })
+  .catch((err) => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 module.exports = router;

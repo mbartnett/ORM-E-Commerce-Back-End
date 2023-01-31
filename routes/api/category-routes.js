@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
@@ -12,6 +13,7 @@ router.get('/', async (req, res) => {
     res.status(200).json(categoryData);
   } catch (err) {
     console.error(err);
+    res.status(500).json(err);
   }
 });
 
@@ -21,8 +23,10 @@ router.get('/:id', async (req, res) => {
     const categoryData = await Category.findByPk(req.params.id, {
       include: [{ model: Product, attributes: ['id', 'product_name', 'price', 'stock', 'category_id'] }],
     });
+    res.status(200).json(categoryData);
   } catch (err) {
     console.error(err);
+    res.status(500).json(err);
   }
 });
 
@@ -33,6 +37,7 @@ router.post('/', async (req, res) => {
     res.status(200).json(categoryData);
   } catch (err) {
     console.error(err);
+    res.status(500).json(err);
   }
 });
 
@@ -45,8 +50,9 @@ router.put('/:id', async (req, res) => {
       },
     });
     res.status(200).json(categoryData);
-  } catch {
+  } catch (err) {
     console.error(err);
+    res.status(500).json(err);
   }
 });
 
@@ -58,9 +64,10 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id,
       },
     });
-    res.status(200).json(categoryData);    
-  } catch {
+    res.status(200).json(categoryData);
+  } catch (err) {
     console.error(err);
+    res.status(500).json(err);
   }
 });
 

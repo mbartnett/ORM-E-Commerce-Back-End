@@ -32,13 +32,17 @@ localhost:3001/api/categories/6/
 PRODUCTS
 GET: localhost:3001/api/products/
 GET BY ID: localhost:3001/api/products/1/
-CREATE: localhost:3001/api/products/6/
-{
-	"product_name": "Briefs"
-}
+CREATE: localhost:3001/api/products/
+	{
+		"id": 6,
+		"product_name": "Briefs",
+		"price": 19.99,
+		"stock": 11,
+		"category_id": 2
+		}
 UPDATE: localhost:3001/api/products/6/
 {
-	"product_name": "Briefs"
+	"product_name": "Boxer Briefs"
 }
 DELETE:
 localhost:3001/api/products/6/
@@ -51,5 +55,8 @@ CREATE: localhost:3001/api/tags/9/
 	"tag_name": "brown"
 }
 UPDATE: localhost:3001/api/tags/9/
+{
+	"tag_name": "chocolate"
+}
 DELETE: localhost:3001/api/tags/9/
 

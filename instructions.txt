@@ -1,0 +1,55 @@
+The walkthrough video must demonstrate how to create the schema from the MySQL shell.
+
+mysql -u root -p;
+SOURCE db/schema.sql;
+SHOW DATABASES;
+USE ecommerce_db;
+
+The walkthrough video must demonstrate how to seed the database from the command line.
+
+npm run seed 
+
+The walkthrough video must demonstrate how to start the application’s server.
+
+npm start
+
+The walkthrough video must demonstrate GET routes for all categories, all products, and all tags being tested in Insomnia.
+
+CATEGORIES
+GET: localhost:3001/api/categories/
+GET BY ID: localhost:3001/api/categories/1/
+CREATE: localhost:3001/api/categories/6/
+{
+	"category_name": "Underwear"
+}
+UPDATE: localhost:3001/api/categories/6/
+{
+	"category_name": "Undergarments"
+}
+DELETE: 
+localhost:3001/api/categories/6/
+
+PRODUCTS
+GET: localhost:3001/api/products/
+GET BY ID: localhost:3001/api/products/1/
+CREATE: localhost:3001/api/products/6/
+{
+	"product_name": "Briefs"
+}
+UPDATE: localhost:3001/api/products/6/
+{
+	"product_name": "Briefs"
+}
+DELETE:
+localhost:3001/api/products/6/
+
+TAGS
+GET: localhost:3001/api/tags/
+GET BY ID: localhost:3001/api/tags/1/
+CREATE: localhost:3001/api/tags/9/
+{
+	"tag_name": "brown"
+}
+UPDATE: localhost:3001/api/tags/9/
+DELETE: localhost:3001/api/tags/9/
+

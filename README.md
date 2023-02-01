@@ -4,7 +4,7 @@
 
 ## Description
 
-An Express.js API that uses Sequelize to interact with a MySQL database.
+The back end for an e-commerce site that uses an Express.js API and Sequelize to interact with a MySQL database.
 
 ## Table of Contents
 
@@ -17,11 +17,15 @@ An Express.js API that uses Sequelize to interact with a MySQL database.
 
 ## Installation
 
-TK
+To use this application you’ll need to install [Node.js](https://nodejs.org/en/), the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect your [Express.js](https://www.npmjs.com/package/express) API to a database, and the [dotenv](https://www.npmjs.com/package/dotenv) package to use environment variables to store sensitive data. You'll also need [Insomnia](https://insomnia.rest/) or a similar application to test the API routes of your models.
 
 ## Usage
 
-TK
+To test the application, open the terminal in your root directory. Login to MySQL and type the commands 'SOURCE db/schema.sql;', and then 'USE ecommerce_db;'. After quitting MySQL, run the 'npm run seed' command to seed data to your database, and run 'npm start' to start your server. Finally, use Insomnia or a similar application to use the 'GET', 'POST', 'PUT', and 'DELETE' routes on the application's 'Product', 'Category', and 'Tag' models.<br><br>![E-Commerce Back End](./assets/E-Commerce-Back-End.png)<br>
+<br>![E-Commerce Back End 2](./assets/E-Commerce-Back-End-2.png)<br>
+<br>![E-Commerce Back End 3](./assets/E-Commerce-Back-End-3.png)<br>
+<br>![E-Commerce Back End 4](./assets/E-Commerce-Back-End-4.png)<br><br>
+[Video: E-Commerce Back End](TK)
 
 ## License
 
@@ -33,7 +37,7 @@ If you have a suggestion that would make this application better, please fork th
 
 ## Tests
 
-TK
+To test the application, open the terminal in your root directory. Login to MySQL and type the commands 'SOURCE db/schema.sql;' and 'USE ecommerce_db;'. After quitting MySQL, run the 'npm run seed' command to seed data to your database, and run 'npm start' to start your server. Finally, use Insomnia or a similar application to use the 'GET', 'POST', 'PUT', and 'DELETE' routes on the application's 'Product', 'Category', and 'Tag' models. 
 
 ## Questions
 
